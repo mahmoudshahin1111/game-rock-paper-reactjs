@@ -2,9 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 300px;
-  height: 300px;
-  border: 1px solid black;
+  margin: 50px;
 }
 .btn.clicked .box-1 .box-2 {
   transform: translateY(-5px);
@@ -16,7 +14,6 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background-color: hsl(230, 89%, 60%);
   transform: perspective(300px) rotateX(10deg);
   outline: 0;
   border: 0;
@@ -36,6 +33,41 @@
   transform: translateY(-10px);
   overflow: hidden;
 }
+
+.box-1.rock {
+  background-color: hsl(349, 71%, 52%);
+}
+.box-1.rock .box-2 {
+  background-color: hsl(349, 70%, 56%);
+}
+.box-1.paper {
+  background-color: hsl(230, 89%, 62%);
+}
+.box-1.paper .box-2 {
+  background-color: hsl(230, 89%, 65%);
+}
+
+.box-1.scissors {
+  background-color: hsl(39, 89%, 49%);
+}
+.box-1.scissors .box-2 {
+  background-color: hsl(40, 84%, 53%);
+}
+
+.box-1.lizard {
+  background-color: hsl(261, 73%, 60%);
+}
+.box-1.lizard .box-2 {
+  background-color: hsl(261, 72%, 63%);
+}
+
+.box-1.cyan {
+  background-color: hsl(189, 59%, 53%);
+}
+.box-1.cyan .box-2 {
+  background-color: hsl(189, 58%, 57%);
+}
+
 .box-3 {
   display: flex;
   align-items: center;

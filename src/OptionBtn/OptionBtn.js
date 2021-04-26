@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import IconPaper from "./icon-paper.svg";
+
 import "./OptionBtn.css";
 export default class OptionBtn extends Component {
+  
   constructor(props) {
     super(props);
     this.state = { isClicked: false };
@@ -17,12 +18,12 @@ export default class OptionBtn extends Component {
           this.setState({ isClicked: false });
         }}
       >
-        <button className="box-1">
+        <button className={'box-1 ' + this.props.btnType}>
           <span className="box-2">
             <span className="box-3">
               <span className="box-4">
                 <span className="box-5">
-                  <img src={IconPaper} alt="paper" />
+                  <img src={this.props.btnIcon} alt="paper" />
                 </span>
               </span>
             </span>
