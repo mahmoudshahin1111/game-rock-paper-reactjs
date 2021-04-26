@@ -1,0 +1,67 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+}
+.btn.clicked .box-1 .box-2 {
+  transform: translateY(-5px);
+}
+.box-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: hsl(230, 89%, 60%);
+  transform: perspective(300px) rotateX(10deg);
+  outline: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.box-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: hsl(230, 89%, 65%);
+  transform: translateY(-10px);
+  overflow: hidden;
+}
+.box-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: rgb(177, 177, 177);
+  overflow: hidden;
+}
+.box-4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255);
+  transform: translateY(8px);
+}
+.box-5 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background-color: rgba(219, 219, 219, 0.1);
+}
