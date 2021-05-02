@@ -1,0 +1,86 @@
+.app-body{
+    height: 100%;
+    width: 96vw;
+  }
+  .app-options{
+    position: absolute;
+    border: 1px solid black;
+  }
+  .option-btn{
+    position: absolute;
+  }
+  
+  .option-btn.btn-1{
+    top: 0;
+    left: 0;
+    transform: translateX(25%) translateY(25%);
+  }
+  .option-btn.btn-1 > .body{
+  
+  }
+  .option-btn.btn-2{
+    top: 0;
+    left: 0;
+    transform: translateX(175%) translateY(25%);
+  }
+  .option-btn.btn-2 > .body{
+  
+  }
+  .option-btn.btn-3{
+    top: 0;
+    left: 0;
+    transform: translateX(100%) translateY(175%);
+  }
+  .option-btn.btn-3 > .body{
+  
+  }
+  
+   
+  
+  .option-connections{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  .option-connection-1{
+    display: inline-block;
+    width: 250px;
+    height: 15px;
+    opacity: 0.4;
+    background: hsl(210, 3%, 14%);
+  
+    position: absolute;
+    top: 150px;
+    left: 125px;
+    transform: rotateZ(60deg);
+    transform-origin: left;
+  }
+  
+  .option-connection-2{
+    display: block;
+    width: 250px;
+    height: 15px;
+    opacity: 0.4;
+    background: hsl(210, 3%, 14%);
+    top: 150px;
+    left: 125px;
+  
+    position: absolute;
+    transform: rotateZ(-60deg);
+    transform-origin: right;
+  }
+  .option-connection-3{
+    display: block;
+    width: 250px;
+    height: 15px;
+    opacity: 0.4;
+    background: hsl(210, 3%, 14%);
+    top: 150px;
+    left: 125px;
+    position: absolute;
+    transform-origin: left;
+  }
+   
+  
+  
