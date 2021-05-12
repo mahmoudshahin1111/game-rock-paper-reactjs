@@ -1,0 +1,40 @@
+.shadow-content {
+    --width: 50vw;
+    --board: 8vw;
+    background-color: rgb(253, 253, 253, 0.05);
+    width: var(--width);
+    height:var(--width);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1000;
+    transform: translateX(-8vw) translateY(-8vw);
+}
+
+.shadow-content .shadow-1 {
+    background-color: rgb(253, 253, 253, 0.05);
+    width: calc(var(--width) - var(--board)) ;
+    height: calc(var(--width) - var(--board));
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+}
+
+.shadow-content .shadow-1 .shadow-2 {
+    background-color: rgb(253, 253, 253, 0.05);
+    width: calc(calc(var(--width) - calc(var(--board) * 2)) + 0);
+    height: calc(calc(var(--width) - calc(var(--board) * 2)) + 0);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+}
+
+.shadow-content .shadow-1 .shadow-2 .shadow-3 {
+    background-color: rgb(253, 253, 253, 0.05);
+    width: calc(calc(var(--width) - calc(var(--board) * 3)) + 0);
+    height: calc(calc(var(--width) - calc(var(--board) * 3)) + 0);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+}

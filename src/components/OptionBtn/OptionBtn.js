@@ -1,35 +1,47 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
+import { GAME_BUTTONS } from "../../Global";
 import "./OptionBtn.css";
-export default class OptionBtn extends Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = { isClicked: false };
+
+const OptionBtn = ({ clickable,gameBtn, clicked }) => {
+  const [isClicked, setIsClicked] = useState(false);
+  if(clickable === undefined){
+    clickable = true;
   }
-  render() {
-    return (
-      <div
-        className={this.state.isClicked ? "btn clicked" : "btn"}
-        onMouseDown={() => {
-          this.setState({ isClicked: true });
-        }}
-        onMouseUp={() => {
-          this.setState({ isClicked: false });
-        }}
-      >
-        <button className={'box-1 ' + this.props.btnType}>
-          <span className="box-2">
-            <span className="box-3">
-              <span className="box-4">
-                <span className="box-5">
-                  <img src={this.props.btnIcon} alt="paper" />
-                </span>
+  function btnMouseDown() {
+    setIsClicked(true);
+    clicked(gameBtn);
+  }
+  function btnMouseUp() {
+    setIsClicked(false)
+
+  }
+
+  return gameBtn ? (
+    <div
+      className={isClicked && clickable ? "btn clicked" : "btn"}
+      onMouseDown={() => clickable?btnMouseDown():null}
+      onMouseUp={() => clickable?btnMouseUp():null}
+    >
+      <button className={"box-1 " + gameBtn.key.toLowerCase()}>
+        <span className="box-2">
+          <span className="box-3">
+            <span className="box-4">
+              <span className="box-5">
+                <img
+                  src={gameBtn.icon}
+                  alt={gameBtn.name}
+                />
               </span>
             </span>
           </span>
-        </button>
-      </div>
-    );
-  }
+        </span>
+      </button>
+    </div>
+  ) : (
+    ""
+  );
+
 }
+
+export default OptionBtn;
