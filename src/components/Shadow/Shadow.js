@@ -1,4 +1,4 @@
-import "./Shadow.css";
+import "./Shadow.scss";
 const Shadow = (props) => {
     return (<div className="shadow-content" >
         <div className="shadow-1" >

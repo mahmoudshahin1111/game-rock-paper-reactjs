@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 
 import { GAME_BUTTONS } from "../../Global";
-import "./OptionBtn.css";
+import "./OptionBtn.scss";
 
 const OptionBtn = ({ clickable,gameBtn, clicked }) => {
   const [isClicked, setIsClicked] = useState(false);

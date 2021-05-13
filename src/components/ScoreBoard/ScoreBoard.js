@@ -1,5 +1,5 @@
 
-import "./ScoreBoard.css";
+import "./ScoreBoard.scss";
 const ScoreBoard = ({ score, gameButtons }) => {
 
   return (

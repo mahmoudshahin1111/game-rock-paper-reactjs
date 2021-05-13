@@ -79,7 +79,7 @@ width: 100%;
   display: block;
   width: 100px;
   height: 100px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: hsla(0, 0%, 0%, 0.2);
   border-radius: 50%;
 
 }
@@ -90,7 +90,7 @@ position: relative;
 }
 .vs-board .body .shadow-circle{
   display: block;
-  background-color: rgb(255, 255, 255,1);
+  background-color: hsl(0, 0%, 100%);
   border-radius: 50%;
   position: absolute;
 

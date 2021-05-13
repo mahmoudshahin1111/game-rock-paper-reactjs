@@ -1,8 +1,6 @@
-import { Component } from "react";
 import OptionBtn from "../../components/OptionBtn/OptionBtn";
-import Shadow from "../../components/Shadow/Shadow";
 import { GAME_BUTTONS } from "../../Global.js";
-import "./YourTurn.css";
+import "./YourTurn.scss";
 const YourTurn = ({ clicked }) => {
 
   function onClicked(e) {
@@ -17,16 +15,16 @@ const YourTurn = ({ clicked }) => {
             <span className="option-connection-2"></span>
             <span className="option-connection-3"></span>
           </div>
-          <div className="option-btn btn-1">
+          <span className="option-btn btn-1">
           <OptionBtn gameBtn={GAME_BUTTONS.PAPER} clicked={onClicked}></OptionBtn>
-          </div>
-          <div className="option-btn btn-2">
+          </span>
+          <span className="option-btn btn-2">
           <OptionBtn gameBtn={GAME_BUTTONS.ROCK} clicked={onClicked}></OptionBtn>
-          </div>
+          </span>
 
-          <div className="option-btn btn-3">
+          <span className="option-btn btn-3">
           <OptionBtn gameBtn={GAME_BUTTONS.SCISSOR} clicked={onClicked}></OptionBtn>
-          </div>
+          </span>
         </div>
 
     </div>

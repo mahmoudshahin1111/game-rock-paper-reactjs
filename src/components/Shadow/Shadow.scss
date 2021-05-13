@@ -1,7 +1,7 @@
 .shadow-content {
     --width: 50vw;
     --board: 8vw;
-    background-color: rgb(253, 253, 253, 0.05);
+    background-color: rgba($color: #dbc0c00d, $alpha: 1.0);
     width: var(--width);
     height:var(--width);
     display: grid;
@@ -13,7 +13,7 @@
 }
 
 .shadow-content .shadow-1 {
-    background-color: rgb(253, 253, 253, 0.05);
+    background-color: hsla(0, 0%, 99%, 0.05);
     width: calc(var(--width) - var(--board)) ;
     height: calc(var(--width) - var(--board));
     display: grid;
@@ -22,7 +22,7 @@
 }
 
 .shadow-content .shadow-1 .shadow-2 {
-    background-color: rgb(253, 253, 253, 0.05);
+    background-color: hsla(0, 0%, 99%, 0.05);
     width: calc(calc(var(--width) - calc(var(--board) * 2)) + 0);
     height: calc(calc(var(--width) - calc(var(--board) * 2)) + 0);
     display: grid;
@@ -31,7 +31,7 @@
 }
 
 .shadow-content .shadow-1 .shadow-2 .shadow-3 {
-    background-color: rgb(253, 253, 253, 0.05);
+    background-color: hsla(0, 0%, 99%, 0.05);
     width: calc(calc(var(--width) - calc(var(--board) * 3)) + 0);
     height: calc(calc(var(--width) - calc(var(--board) * 3)) + 0);
     display: grid;

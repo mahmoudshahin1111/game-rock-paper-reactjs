@@ -1,11 +1,11 @@
 import React, { Component, useState } from "react";
 
-import "./App.css";
+import "./App.scss";
 import ScoreBoard from "./components/ScoreBoard/ScoreBoard";
 import YourTurn from "./pages/YourTurn/YourTurn";
 import WaitComputer from "./pages/WaitComputer/WaitComputer";
 import { GAME_BUTTONS, GAME_STATUS, STEPS } from "./Global";
-import Shadow from "./components/Shadow/Shadow";
+
 
 
 
@@ -54,11 +54,11 @@ const App = ({ }) => {
         />
       )}
 
-      <div className="footer">
+      {/* <div className="footer">
         <button className="rules-btn" onClick={openRules}>
           rules
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

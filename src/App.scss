@@ -1,0 +1,9 @@
+.app {
+overflow: hidden;
+display: grid;
+grid-template-rows: calc(10vh + 3rem) calc(90vh - 3rem);
+width: 100vw;
+background: green;
+}
+
+

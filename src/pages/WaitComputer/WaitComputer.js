@@ -4,7 +4,7 @@ import OptionBtn from "../../components/OptionBtn/OptionBtn";
 import Shadow from "../../components/Shadow/Shadow";
 import { GAME_BUTTONS, GAME_STATUS } from "../../Global";
 
-import "./WaitComputer.css";
+import "./WaitComputer.scss";
 
 
 

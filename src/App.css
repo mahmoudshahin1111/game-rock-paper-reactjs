@@ -1,7 +1,0 @@
-.app {
-overflow: hidden;
-display: grid;
-grid-template-rows: calc(10vh + 3rem) calc(85vh - 3rem) auto;
-}
-
-
