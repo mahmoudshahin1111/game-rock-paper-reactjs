@@ -10,11 +10,9 @@ const YourTurn = ({ clicked }) => {
     <div className="app-body">
 
         <div className="app-options">
-          <div className="option-connections">
-            <span className="option-connection-1"></span>
-            <span className="option-connection-2"></span>
-            <span className="option-connection-3"></span>
-          </div>
+          <span className="connections">
+            <span></span>
+          </span>
           <span className="option-btn btn-1">
           <OptionBtn gameBtn={GAME_BUTTONS.PAPER} clicked={onClicked}></OptionBtn>
           </span>

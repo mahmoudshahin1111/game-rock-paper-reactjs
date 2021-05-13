@@ -1,15 +1,16 @@
 .app-body{
   display: grid;
   place-items: center;
-  background: rgb(134, 66, 66);
-  width: 100vw;
+  width: 500px;
+  height: 500px;
+  padding: 10px;
   }
   .app-options{
     position: relative;
     width: 100%;
     max-width: 500px;
     height: 100%;
-    background: rgb(252, 0, 197);
+    padding: 10px;
 
   }
   .option-btn{
@@ -17,46 +18,45 @@
   }
   
   .option-btn.btn-1{
-    left: 2%;
-    top: calc(25% - 100px);
+    left: 10;
+    top: calc(25% - 80px);
   }
   .option-btn.btn-2{
-    right: 2%;
-    top: calc(25% - 100px);
+    right: 10px;
+    top: calc(25% - 80px);
   }
   .option-btn.btn-3{
-    bottom: 10%;
-    left: calc(50% - 100px);
+    bottom: 30px;
+    left: calc(50% - 80px);
   }
 .option-connections{
     position: relative;
     height: 100%;
     width: 100%;
-    /* background: white; */
   }
-  .option-connections > span{
+  .connections{
     position: absolute;
-    width: 100%;
-    max-width: 250px;
-    height: 50%;
-    max-height: 20px;
-    background-color: rgba(0, 0, 0, 0.2);
+    display: grid;
+    place-items: center;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    width: 400px;
+    height:350px;
+    top: calc(50% - 150px);
+    left: calc(50% - 200px);
+    background-color: hsla(0, 0%, 0%, 0.445);
+    
   }
-  .option-connection-1{
-    top: 50%;
-    transform: translateX(15%) rotateZ(60deg);
+  .connections > span{
+    display: block;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    width: 350px;
+    height:300px;
+    transform: translateY(-10px);
+    background: var(--bg-color-1);
+    background-repeat: no-repeat;
+  background-position: center;
   }
-  
-  .option-connection-2{
-    right: 0;
-    top: 50%;
-    transform: translateX(-15%)  rotateZ(-60deg);
 
-  }
-  .option-connection-3{
-    top: 25%;
-    transform: translateX(50%);
-  }
    
   
   
