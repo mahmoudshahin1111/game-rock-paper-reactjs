@@ -9,8 +9,8 @@ const YourTurn = ({ clicked }) => {
     if (clicked) clicked(e);
   }
   return (
-    <div>
-      <div className="app-body">
+    <div className="app-body">
+
         <div className="app-options">
           <div className="option-connections">
             <span className="option-connection-1"></span>
@@ -18,26 +18,17 @@ const YourTurn = ({ clicked }) => {
             <span className="option-connection-3"></span>
           </div>
           <div className="option-btn btn-1">
-            <div className="body">
-    
-            <OptionBtn gameBtn={GAME_BUTTONS.PAPER} clicked={onClicked}></OptionBtn>
-           
-            
-            </div>
+          <OptionBtn gameBtn={GAME_BUTTONS.PAPER} clicked={onClicked}></OptionBtn>
           </div>
           <div className="option-btn btn-2">
-            <div className="body">
-              <OptionBtn gameBtn={GAME_BUTTONS.ROCK} clicked={onClicked}></OptionBtn>
-            </div>
+          <OptionBtn gameBtn={GAME_BUTTONS.ROCK} clicked={onClicked}></OptionBtn>
           </div>
 
           <div className="option-btn btn-3">
-            <div className="body">
-              <OptionBtn gameBtn={GAME_BUTTONS.SCISSOR} clicked={onClicked}></OptionBtn>
-            </div>
+          <OptionBtn gameBtn={GAME_BUTTONS.SCISSOR} clicked={onClicked}></OptionBtn>
           </div>
         </div>
-      </div>
+
     </div>
   );
 

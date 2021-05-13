@@ -1,85 +1,57 @@
 .app-body{
-    height: 100%;
-    width: 96vw;
+  position: relative;
+  display: grid;
+  grid-template-rows: 80% 20%;
+  place-items: center;
   }
   .app-options{
-    position: absolute;
-    border: 1px solid black;
+    position: relative;
+    width: 90vw;
+    height: 100%;
+    max-width: 500px;
+
+
   }
   .option-btn{
     position: absolute;
+    top: 0;
   }
   
   .option-btn.btn-1{
-    top: 0;
-    left: 0;
-    transform: translateX(25%) translateY(25%);
-  }
-  .option-btn.btn-1 > .body{
-  
+    transform: translateX(0%) translateY(20%);
   }
   .option-btn.btn-2{
-    top: 0;
-    left: 0;
-    transform: translateX(175%) translateY(25%);
-  }
-  .option-btn.btn-2 > .body{
-  
+    transform:  translateX(150%) translateY(20%);
   }
   .option-btn.btn-3{
-    top: 0;
-    left: 0;
-    transform: translateX(100%) translateY(175%);
+    transform: translateX(80%) translateY(150%);
   }
-  .option-btn.btn-3 > .body{
-  
-  }
-  
-   
-  
-  .option-connections{
-    position: absolute;
-    display: flex;
-    width: 100%;
+.option-connections{
+    position: relative;
     height: 100%;
+    width: 100%;
+    background: rosybrown;
   }
-  .option-connection-1{
-    display: inline-block;
+  .option-connections > span{
+    position: absolute;
     width: 250px;
     height: 15px;
-    opacity: 0.4;
-    background: hsl(210, 3%, 14%);
-  
-    position: absolute;
-    top: 150px;
-    left: 125px;
-    transform: rotateZ(60deg);
-    transform-origin: left;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .option-connection-1{
+    top: 50%;
+    transform: translateX(15%) rotateZ(60deg);
   }
   
   .option-connection-2{
-    display: block;
-    width: 250px;
-    height: 15px;
-    opacity: 0.4;
-    background: hsl(210, 3%, 14%);
-    top: 150px;
-    left: 125px;
-  
-    position: absolute;
-    transform: rotateZ(-60deg);
-    transform-origin: right;
+    right: 0;
+    top: 50%;
+    transform: translateX(-15%)  rotateZ(-60deg);
+
   }
   .option-connection-3{
-    display: block;
-    width: 250px;
-    height: 15px;
-    opacity: 0.4;
-    background: hsl(210, 3%, 14%);
-    top: 150px;
-    left: 125px;
-    position: absolute;
-    transform-origin: left;
+    top: 25%;
+    transform: translateX(40%);
   }
    
   

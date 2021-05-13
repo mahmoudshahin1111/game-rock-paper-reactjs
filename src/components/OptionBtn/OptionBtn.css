@@ -1,18 +1,20 @@
 .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
+  position: relative;
+  width: 50vw;
+  height: 50vw;
+  max-width: calc(150px + 5vw);
+  max-height: calc(150px + 5vw);
 }
 .btn.clicked .box-1 .box-2 {
   transform: translateY(-5px);
 }
 .box-1 {
+  --width:100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 150px;
-  height: 150px;
+  width: var(--width);
+  height: var(--width);
   border-radius: 50%;
   transform: perspective(300px) rotateX(10deg);
   outline: 0;
@@ -26,8 +28,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 150px;
-  height: 150px;
+  width: var(--width);
+  height: var(--width);
   border-radius: 50%;
   background-color: hsl(230, 89%, 65%);
   transform: translateY(-10px);
@@ -69,31 +71,28 @@
 }
 
 .box-3 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-  height: 120px;
+  display: grid;
+  place-items: center;
+  width: calc(var(--width) - 30px);
+  height: calc(var(--width) - 30px);
   border-radius: 50%;
   background-color: rgb(177, 177, 177);
   overflow: hidden;
 }
 .box-4 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 120px;
-  height: 120px;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background-color: rgba(255, 255, 255);
   transform: translateY(8px);
 }
 .box-5 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 115px;
-  height: 115px;
+  display: grid;
+  place-items: center;
+  width: calc(var(--width) - 10px);
+  height: calc(var(--width) - 10px);
   border-radius: 50%;
   background-color: rgba(219, 219, 219, 0.1);
 }

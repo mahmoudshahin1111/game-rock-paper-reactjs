@@ -44,10 +44,7 @@ const App = ({ }) => {
 
   return (
     <div className="app">
- 
-      <div>
-        <ScoreBoard score={score} gameButtons={gameButtons} />
-      </div>
+<ScoreBoard score={score} gameButtons={gameButtons} />
       {currentStep === STEPS.YOUR_TURN ? (
         <YourTurn clicked={playerChoosesBtn} />
       ) : (

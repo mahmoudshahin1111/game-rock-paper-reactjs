@@ -70,7 +70,7 @@ const WaitComputer = ({ playerGameBtn, onGamePlayAgain }) => {
       <div className="vs-board">
         <div className="body">
           <div className="player">
-            <div className="name">You picked</div>
+          
             <div className="options-btn">
               {playerGameBtn ? (
                 <div className="btn-content">
@@ -84,14 +84,11 @@ const WaitComputer = ({ playerGameBtn, onGamePlayAgain }) => {
                 ""
               )}
             </div>
+            <div className="name">You picked</div>
           </div>
-          <div className="result-body">
-            {(gameStatus === GAME_STATUS.WINNER) ? (<WinComponent playAgainClicked={() => onGamePlayAgain(gameStatus)} />) : ''}
-            {(gameStatus === GAME_STATUS.LOOSER) ? (<LooseComponent playAgainClicked={() => onGamePlayAgain(gameStatus)} />) : ''}
-            {(gameStatus === GAME_STATUS.EQUALS) ? (<EqualComponent playAgainClicked={() => onGamePlayAgain(gameStatus)} />) : ''}
-          </div>
+        
           <div className="computer">
-            <div className="name">Waiting</div>
+        
             <div className="options-btn">
               {computerBtn ? (
                 <div className="btn-content">
@@ -104,8 +101,17 @@ const WaitComputer = ({ playerGameBtn, onGamePlayAgain }) => {
                 <div className="empty-btn"></div>
               )}
             </div>
+       
+               <div className="name">{  computerBtn?'The House Picked':'Waiting'}</div>
+         
+         
           </div>
         </div>
+        <div className="result-body">
+            {(gameStatus === GAME_STATUS.WINNER) ? (<WinComponent playAgainClicked={() => onGamePlayAgain(gameStatus)} />) : ''}
+            {(gameStatus === GAME_STATUS.LOOSER) ? (<LooseComponent playAgainClicked={() => onGamePlayAgain(gameStatus)} />) : ''}
+            {(gameStatus === GAME_STATUS.EQUALS) ? (<EqualComponent playAgainClicked={() => onGamePlayAgain(gameStatus)} />) : ''}
+          </div>
       </div>
     </div>
   );
