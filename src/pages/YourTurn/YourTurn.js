@@ -1,5 +1,6 @@
 import OptionBtn from "../../components/OptionBtn/OptionBtn";
 import { GAME_BUTTONS } from "../../Global.js";
+import TriangleImg from "../../assets/bg-triangle.svg"
 import "./YourTurn.scss";
 const YourTurn = ({ clicked }) => {
 
@@ -11,7 +12,7 @@ const YourTurn = ({ clicked }) => {
 
         <div className="app-options">
           <span className="connections">
-            <span></span>
+            <img className="triangle-img" src={TriangleImg} />
           </span>
           <span className="option-btn btn-1">
           <OptionBtn gameBtn={GAME_BUTTONS.PAPER} clicked={onClicked}></OptionBtn>

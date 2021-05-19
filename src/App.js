@@ -4,7 +4,10 @@ import "./App.scss";
 import ScoreBoard from "./components/ScoreBoard/ScoreBoard";
 import YourTurn from "./pages/YourTurn/YourTurn";
 import WaitComputer from "./pages/WaitComputer/WaitComputer";
+import RulesPreview from "./components/RulesPreview/RulesPreview";
 import { GAME_BUTTONS, GAME_STATUS, STEPS } from "./Global";
+import { RulesBtn } from "./components/Rules/RulesBtn";
+
 
 
 
@@ -21,7 +24,7 @@ const App = ({ }) => {
   const [score, setScore] = useState(0);
   const [playerGameBtn, setPlayerGameBtn] = useState({});
   const [computerGameBtn, setComputerGameBtn] = useState({});
-
+  const [rulesPreviewOpened,setRulesPreviewOpened] = useState(false);
   const openRules = () => {
     console.log("open rules");
   };
@@ -35,16 +38,19 @@ const App = ({ }) => {
   const playAgain = (turnStatus) => {
     if (turnStatus === GAME_STATUS.WINNER) {
       setScore(score + 2);
-    }else if(turnStatus === GAME_STATUS.LOOSER) {
+    } else if (turnStatus === GAME_STATUS.LOOSER) {
       setScore(Math.max(0, score - 1));
     }
     setPlayerGameBtn(null);
     setCurrentStep(STEPS.YOUR_TURN);
   };
-
   return (
     <div className="app">
-<ScoreBoard score={score} gameButtons={gameButtons} />
+      {
+        (rulesPreviewOpened)?(<RulesPreview closeClicked={()=>setRulesPreviewOpened(false)}/>):''
+      }
+    
+      <ScoreBoard score={score} gameButtons={gameButtons} />
       {currentStep === STEPS.YOUR_TURN ? (
         <YourTurn clicked={playerChoosesBtn} />
       ) : (
@@ -54,11 +60,9 @@ const App = ({ }) => {
         />
       )}
 
-      {/* <div className="footer">
-        <button className="rules-btn" onClick={openRules}>
-          rules
-        </button>
-      </div> */}
+      <div className="roles-content">
+        <RulesBtn clicked={()=>setRulesPreviewOpened(!rulesPreviewOpened)} />
+      </div>
     </div>
   );
 };

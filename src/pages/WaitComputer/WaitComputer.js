@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import OptionBtn from "../../components/OptionBtn/OptionBtn";
+import { RulesBtn } from "../../components/Rules/RulesBtn";
 import Shadow from "../../components/Shadow/Shadow";
 import { GAME_BUTTONS, GAME_STATUS } from "../../Global";
 
@@ -10,7 +11,7 @@ import "./WaitComputer.scss";
 
 const WinComponent = ({ playAgainClicked }) => {
   return (
-    <div>
+    <div className="status-component">
       <p className="title">you win</p>
       <button className="play-again-btn" onClick={(e) => playAgainClicked(e)}>play again</button>
     </div>
@@ -19,7 +20,7 @@ const WinComponent = ({ playAgainClicked }) => {
 
 const LooseComponent = ({ playAgainClicked }) => {
   return (
-    <div>
+    <div className="status-component">
       <p className="title">you Loose</p>
       <button className="play-again-btn" onClick={(e) => playAgainClicked(e)}>play again</button>
     </div>
@@ -28,7 +29,7 @@ const LooseComponent = ({ playAgainClicked }) => {
 
 const EqualComponent = ({ playAgainClicked }) => {
   return (
-    <div>
+    <div className="status-component">
       <p className="title">No Winners</p>
       <button className="play-again-btn" onClick={(e) => playAgainClicked(e)}>play again</button>
     </div>
@@ -70,41 +71,23 @@ const WaitComputer = ({ playerGameBtn, onGamePlayAgain }) => {
       <div className="vs-board">
         <div className="body">
           <div className="player">
-          
+
             <div className="options-btn">
-              {playerGameBtn ? (
-                <div className="btn-content">
-                {
-                  gameStatus === GAME_STATUS.WINNER?<Shadow> </Shadow>:''
-                }
-                
-                  <OptionBtn gameBtn={playerGameBtn} clickable={false} />
-                </div>
-              ) : (
-                ""
-              )}
+              <OptionBtn gameBtn={playerGameBtn} clickable={false} />
             </div>
             <div className="name">You picked</div>
           </div>
-        
+
           <div className="computer">
-        
+
             <div className="options-btn">
-              {computerBtn ? (
-                <div className="btn-content">
-                {
-                  gameStatus === GAME_STATUS.LOOSER?<Shadow> </Shadow>:''
-                }
-                  <OptionBtn gameBtn={computerBtn} clickable={false} />
-                </div>
-              ) : (
-                <div className="empty-btn"></div>
-              )}
+              {
+                (computerBtn !== null && computerBtn !== undefined) ?
+                  (<OptionBtn gameBtn={computerBtn} clickable={false} />) :
+                  (<span className="empty-btn"></span>)
+              }
             </div>
-       
-               <div className="name">{  computerBtn?'The House Picked':'Waiting'}</div>
-         
-         
+            <div className="name">The House Picked</div>
           </div>
         </div>
         <div className="result-body">
@@ -112,7 +95,9 @@ const WaitComputer = ({ playerGameBtn, onGamePlayAgain }) => {
             {(gameStatus === GAME_STATUS.LOOSER) ? (<LooseComponent playAgainClicked={() => onGamePlayAgain(gameStatus)} />) : ''}
             {(gameStatus === GAME_STATUS.EQUALS) ? (<EqualComponent playAgainClicked={() => onGamePlayAgain(gameStatus)} />) : ''}
           </div>
+      
       </div>
+
     </div>
   );
 };

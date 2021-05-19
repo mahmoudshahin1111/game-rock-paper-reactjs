@@ -4,6 +4,7 @@ const ScoreBoard = ({ score, gameButtons }) => {
 
   return (
     <div className="app-scoreBoard">
+      <div className="scoreBoard-content">
       {gameButtons ? (
         <ul className="list">
           {gameButtons.map((btn, i) => {
@@ -22,6 +23,7 @@ const ScoreBoard = ({ score, gameButtons }) => {
       <div className="score-content">
         <span className="title">Score</span>
         <span className="value">{score}</span>
+      </div>
       </div>
     </div>
   );

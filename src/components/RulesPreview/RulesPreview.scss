@@ -1,0 +1,48 @@
+.rules-preview-content{
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    z-index: 10000;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20vh 60vh 15vh;
+    .title{
+
+        height: 15vh;
+        padding: 0;margin: 0;
+        display: grid;
+        place-items: center;
+    }
+    .model-content{
+       text-align: center;
+       width: 100%;
+       height: 100%;
+
+       .model-img{
+
+        width: 80%;
+        height: 80%;
+        background-position: center;
+        background-size: contain;
+    
+    }
+    }
+ 
+    .btn-content{
+        text-align: center;
+        height: 15vh;
+        padding: 0;margin: 0;
+        .btn{
+            height: 100%;
+            max-height: calc(10vh + 0.2rem);
+            background: transparent;
+            border: 0;
+            outline: 0;
+        }
+    }
+   
+    
+}
