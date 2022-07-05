@@ -3,14 +3,16 @@ import "./RulesPreview.scss"
  const RulesPreview = ({closeClicked})=>{
     return (
         <div className="rules-preview-content">
-            <h1 className="title" >Rules</h1>
+           
             <div className="model-content">
+            <h1 className="title" >Rules</h1>
             <img className="model-img" src={rulesImage} />
+            <div className="btn-content">
+                <button onClick={()=>closeClicked()}>Close</button>
+            </div>
             </div>
           
-            <div className="btn-content">
-                <button className="btn" onClick={()=>closeClicked()}>Close</button>
-            </div>
+            
         </div>
     )
 }
