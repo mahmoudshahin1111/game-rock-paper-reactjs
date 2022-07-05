@@ -1,8 +1,6 @@
 
-import { useState } from "react";
+import { Component, useState } from "react";
 import OptionBtn from "../../components/OptionBtn/OptionBtn";
-import { RulesBtn } from "../../components/Rules/RulesBtn";
-import Shadow from "../../components/Shadow/Shadow";
 import { GAME_BUTTONS, GAME_STATUS } from "../../Global";
 
 import "./WaitComputer.scss";
@@ -36,12 +34,21 @@ const EqualComponent = ({ playAgainClicked }) => {
   );
 };
 
-const WaitComputer = ({ playerGameBtn, onGamePlayAgain }) => {
-  const [computerBtn, setComputerBtn] = useState();
-  const [gameStatus, setSetGameStatus] = useState();
+class WaitComputer extends Component{
+  computerTurnSettimeoutId = null;
+  constructor(props){
+    super(props);
+    this.state = {
+      computerBtn:null,
+      gameStatus:null,
+    }
+  }
 
+  componentDidMount(){
+    this.computerTurn();
+  }
 
-  function CanBeat(currentBtn, otherBtn) {
+   canBeat(currentBtn, otherBtn) {
     for (const key of currentBtn.beats) {
       if (key === otherBtn.key) {
         return true;
@@ -51,55 +58,67 @@ const WaitComputer = ({ playerGameBtn, onGamePlayAgain }) => {
   }
 
 
-  function computerTurn() {
-    const timeOut = setTimeout(() => {
-      const computerBtn = GAME_BUTTONS.ROCK;
-      setComputerBtn(computerBtn);
-      if (playerGameBtn === computerBtn) {
-        setSetGameStatus(GAME_STATUS.EQUALS);
-      } else if (CanBeat(playerGameBtn, computerBtn) === true) {
-        setSetGameStatus(GAME_STATUS.WINNER);
+   computerTurn() {
+    if(this.computerTurnSettimeoutId){
+      clearTimeout(this.computerTurnSettimeoutId);
+    }
+    this.computerTurnSettimeoutId = setTimeout(() => {
+      const gameButtonsKeys = Object.keys(GAME_BUTTONS);
+      const computerBtn = GAME_BUTTONS[gameButtonsKeys[Math.floor((Math.random()*(gameButtonsKeys.length-1)+1))]];
+      this.state.computerBtn = computerBtn;
+      if (this.props.playerGameBtn === computerBtn) {
+        this.setState({
+          gameStatus : GAME_STATUS.EQUALS
+        })  
+      } else if (this.canBeat(this.props.playerGameBtn, computerBtn) === true) {
+        this.setState({
+          gameStatus : GAME_STATUS.WINNER
+        })  
       } else {
-        setSetGameStatus(GAME_STATUS.LOOSER);
+        this.setState({
+          gameStatus : GAME_STATUS.LOOSER
+        })  
       }
-      clearTimeout(timeOut);
+      clearTimeout(this.computerTurnSettimeoutId);
     }, 1500);
   }
-  computerTurn();
-  return (
-    <div>
-      <div className="vs-board">
-        <div className="body">
-          <div className="player">
 
-            <div className="options-btn">
-              <OptionBtn gameBtn={playerGameBtn} clickable={false} />
+  render(){
+    return (
+      <div>
+        <div className="vs-board">
+          <div className="body">
+            <div className="player">
+  
+              <div className="options-btn">
+                <OptionBtn gameBtn={this.props.playerGameBtn} clickable={false} />
+              </div>
+              <div className="name">You picked</div>
             </div>
-            <div className="name">You picked</div>
-          </div>
-
-          <div className="computer">
-
-            <div className="options-btn">
-              {
-                (computerBtn !== null && computerBtn !== undefined) ?
-                  (<OptionBtn gameBtn={computerBtn} clickable={false} />) :
-                  (<span className="empty-btn"></span>)
-              }
+  
+            <div className="computer">
+  
+              <div className="options-btn">
+                {
+                  (this.state.computerBtn !== null && this.state.computerBtn !== undefined) ?
+                    (<OptionBtn gameBtn={this.state.computerBtn} clickable={false} />) :
+                    (<span className="empty-btn"></span>)
+                }
+              </div>
+              <div className="name">The House Picked</div>
             </div>
-            <div className="name">The House Picked</div>
           </div>
+          <div className="result-body">
+              {(this.state.gameStatus === GAME_STATUS.WINNER) ? (<WinComponent playAgainClicked={() => this.props.onGamePlayAgain(this.state.gameStatus)} />) : ''}
+              {(this.state.gameStatus === GAME_STATUS.LOOSER) ? (<LooseComponent playAgainClicked={() => this.props.onGamePlayAgain(this.state.gameStatus)} />) : ''}
+              {(this.state.gameStatus === GAME_STATUS.EQUALS) ? (<EqualComponent playAgainClicked={() => this.props.onGamePlayAgain(this.state.gameStatus)} />) : ''}
+            </div>
+        
         </div>
-        <div className="result-body">
-            {(gameStatus === GAME_STATUS.WINNER) ? (<WinComponent playAgainClicked={() => onGamePlayAgain(gameStatus)} />) : ''}
-            {(gameStatus === GAME_STATUS.LOOSER) ? (<LooseComponent playAgainClicked={() => onGamePlayAgain(gameStatus)} />) : ''}
-            {(gameStatus === GAME_STATUS.EQUALS) ? (<EqualComponent playAgainClicked={() => onGamePlayAgain(gameStatus)} />) : ''}
-          </div>
-      
+  
       </div>
-
-    </div>
-  );
+    );
+  }
 };
 
 
